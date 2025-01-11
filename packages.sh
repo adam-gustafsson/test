@@ -1,0 +1,71 @@
+sudo pacman -Syu --noconfirm
+
+PACKAGES=(
+  "hyprland"
+  "hyprlock"
+  "hypridle"
+  "hyprpicker"
+  "wl-clipboard"
+  "wofi"
+  "waybar"
+  "firefox"
+  "htop"
+  "fastfetch"
+  "ttf-jetbrains-mono-nerd"
+  "ttf-font-awesome"
+  "nano"
+  "nvim"
+  "tmux"
+  "wget"
+  "zip"
+  "unzip"
+  "fzf"
+  "ntfs-3g"
+  "cmake"
+  "sfml"
+  "git"
+  "ghostty"
+  "zsh"
+  "bitwarden"
+  "power-profiles-daemon"
+  "pavucontrol"
+  "easyeffects"
+  "lsp-plugins"
+  "spotify"
+  "thunar"
+  "lxappearance"
+  "tumbler"
+  "gvfs"
+  "gthumb"
+  "gnome-calculator"
+  "vlc"
+  "tldr"
+  "tree"
+  "qbittorrent"
+  "rust"
+  "ruby"
+  "gedit"
+)
+
+AUR=(
+  "librewolf-bin"
+  "autojump"
+  "webcord"
+  "spotify-adblock"
+  "catppuccin-gtk-theme-mocha"
+  "gradience"
+  "nwg-look"
+  "hyprshade"
+  "hyprshot"
+  "forticlient-vpn"
+)
+
+for package in "${PACKAGES[@]}"; do
+  echo "Installing $package"
+  sudo pacman -S --noconfirm --needed "$package"
+done
+
+for package in "${AUR[@]}"; do
+  echo "Installing $package"
+    yay --noconfirm "$package"
+done
